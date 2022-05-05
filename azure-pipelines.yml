@@ -13,19 +13,12 @@ steps:
 - task: UiPathPack@2
   inputs:
     versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourceDirectory)'
-    outputType: 'Process'
+    projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'Cloudconnection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-- task: PublishBuildArtifacts@1
+- task: UiPathDeploy@2
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'Demo'
-    publishLocation: 'Container'
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    orchestratorConnection: 'Cloudconnection'
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    folderName: 'OrchTraining'
+    entryPoints: 'Main.xaml'
