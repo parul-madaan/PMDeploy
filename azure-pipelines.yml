@@ -14,11 +14,11 @@ steps:
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'Cloudconnection'
+    orchestratorConnection: 'PaaSOrch'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
 - task: UiPathDeploy@2
   inputs:
-    orchestratorConnection: 'Cloudconnection'
+    orchestratorConnection: 'PaaSOrch'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'OrchTraining'
+    folderName: 'NewModern'
     entryPoints: 'Main.xaml'
