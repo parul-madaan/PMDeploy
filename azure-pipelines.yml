@@ -20,5 +20,5 @@ steps:
   inputs:
     orchestratorConnection: 'PaaSOrch'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'NewModern'
+    folderName: 'OrchTraining'
     entryPoints: 'Main.xaml'
