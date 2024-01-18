@@ -16,6 +16,7 @@ steps:
     projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'PaaSOrch'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    runWorkflowAnalysis: true
 - task: UiPathDeploy@2
   inputs:
     orchestratorConnection: 'PaaSOrch'
