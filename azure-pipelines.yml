@@ -16,9 +16,9 @@ steps:
     orchestratorConnection: 'pmadaanCloudConnection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     runWorkflowAnalysis: true
-- task: UiPathDeploy@2
+- task: UiPathDeploy@4
   inputs:
     orchestratorConnection: 'pmadaanCloudConnection'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    createProcess: false
     folderName: 'OrchTraining'
-    entryPoints: 'Main.xaml'
