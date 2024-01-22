@@ -9,16 +9,16 @@ trigger:
 pool: Default
 
 steps:
-- task: UiPathPack@2
+- task: UiPathPack@4
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'PaaSOrch'
+    orchestratorConnection: 'pmadaanCloudConnection'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     runWorkflowAnalysis: true
 - task: UiPathDeploy@2
   inputs:
-    orchestratorConnection: 'PaaSOrch'
+    orchestratorConnection: 'pmadaanCloudConnection'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'OrchTraining'
     entryPoints: 'Main.xaml'
