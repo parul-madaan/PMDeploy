@@ -16,10 +16,10 @@ stages:
         orchestratorConnection: 'pmadaanCloudConnection'
         outputPath: '$(Build.ArtifactStagingDirectory)\Output'
         runWorkflowAnalysis: true
+        traceLevel: 'Verbose'
     - task: UiPathDeploy@4
       inputs:
         orchestratorConnection: 'pmadaanCloudConnection'
         packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
         createProcess: false
         folderName: 'OrchTraining'
-        traceLevel: 'Verbose'
