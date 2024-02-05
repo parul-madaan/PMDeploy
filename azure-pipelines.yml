@@ -22,4 +22,4 @@ stages:
         packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
         createProcess: false
         folderName: 'OrchTraining'
-
+        traceLevel: 'Verbose'
